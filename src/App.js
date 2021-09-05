@@ -25,7 +25,7 @@ function App() {
       </Grid>
 
       <PushToTalkButtonContainer>
-        <PushToTalkButton />
+        <PushToTalkButton size="4em"/>
         <ErrorPanel />
       </PushToTalkButtonContainer>
     </div>
