@@ -1,20 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Card, CardHeader, CardContent, Typography, Grid, Divider } from "@material-ui/core";
+import { ExpenseTrackerContext } from "../../context/context";
 import useStyles from "./styles";
 import Form from "./Form/Form";
 import List from "./List/List";
+import InfoCard from "../InfoCard";
 
 const Main = () => {
   const classes = useStyles();
+  const { balance } = useContext(ExpenseTrackerContext);
 
   return (
     <Card className={classes.root}>
 
       <CardHeader title="Expense Tracker" subheader="Powered by Speechly" />
       <CardContent>
-        <Typography align="center" variant="h5">Total Balance $10000</Typography>
+        <Typography align="center" variant="h5">Total balance: ${balance}</Typography>
         <Typography variant="subtitle1" style={{ lineHeight: "1.5em", marginTop: "20px" }}>
-          Try Saying: Add income........
+          <InfoCard />
         </Typography>
         <Divider />
         <Form />
